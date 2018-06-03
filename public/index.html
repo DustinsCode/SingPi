@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles.css">
+		<title>SingPi!</title>
+		<style type="text/css">
+			#login, #loggedin {
+				display: none;
+			}
+			.text-overflow {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				width: 500px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div id="login">
+				<h1>Welcome to SingPi!</h1>
+				<p>To access lyrics, please sign into your spotify account!</p>
+				<a href="/login" class="btn btn-primary">Sign in with Spotify</a>
+			</div>
+			<div id="loggedin">
+				<div id="user-profile">
+				</div>
+				<div id="lyrics">
+				</div>
+
+			</div>
+		</div>
+
+		<script id="user-profile-template" type="text/x-handlebars-template">
+			<h1>Logged in as {{display_name}}</h1>
+			<div class="media">
+				<div class="pull-left">
+					<img class="media-object" width="100" src="{{images.0.url}}"/>
+				</div>
+				<div class="media-body">
+					<!-- THIS WILL BE WHERE THE LYRICS GO AND CURRENT SONG -->
+					<p id="curr-track"></p>
+				</div>
+			</div>
+		</script>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="connect.js"></script>
+	</body>
+</html>
